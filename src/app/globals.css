@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #060b11;
+    --foreground: #f8f6f0;
+    --gold: #c59b27;
+    --gold-light: #e2b857;
+    --gold-dark: #967418;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    overflow-x: hidden;
+    font-family: var(--font-jakarta), sans-serif;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-cinzel), serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Luxury Glassmorphism Panels */
+.glass-panel {
+  background: rgba(10, 17, 26, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 155, 39, 0.25);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(197, 155, 39, 0.05);
+  border-color: rgba(197, 155, 39, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Executive Gold Gradients */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f3d683 0%, #c59b27 50%, #967418 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-btn {
+  background: linear-gradient(135deg, #e2b857 0%, #c59b27 100%);
+  color: #060b11;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.gold-gradient-btn:hover {
+  box-shadow: 0 10px 30px rgba(197, 155, 39, 0.35);
+  transform: translateY(-2px);
+}
+
+.whatsapp-gradient-bg {
+  background: linear-gradient(135deg, #1e7e44 0%, #115e32 100%);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+}
+
+/* Styled Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060b11;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(197, 155, 39, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(197, 155, 39, 0.6);
 }
